@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+/* Custom theme configuration */
+@theme {
+  --color-primary: #46b9af;
+  --color-background-light: #f6f8f7;
+
+  --font-display: 'Be Vietnam Pro', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
