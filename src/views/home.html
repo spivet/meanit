@@ -1,107 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Echo Language Practice</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@1,700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round&amp;display=swap" rel="stylesheet" />
-    <script>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Echo AI Evolution Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Lora:ital,wght@0,500;0,600;1,500&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: "#46b9af",
-                        "background-light": "#f6f8f7"
+                        primary: "#14B8A6",
+                        "soft-off-white": "#F9FAFB",
                     },
                     fontFamily: {
-                        display: ["Be Vietnam Pro", "sans-serif"],
-                        serif: ["Playfair Display", "serif"],
-                        sans: ["Inter", "sans-serif"]
+                        display: ["Inter", "Noto Sans SC", "sans-serif"],
+                        serif: ["Lora", "serif"],
                     },
                     borderRadius: {
-                        DEFAULT: "0.5rem",
-                        lg: "1rem",
-                        xl: "1.5rem",
-                        full: "9999px"
-                    }
-                }
-            }
+                        DEFAULT: "1.5rem",
+                    },
+                },
+            },
         };
     </script>
-    <style type="text/tailwindcss">
-        body {
-            -webkit-tap-highlight-color: transparent;
-            min-height: 100dvh;
-        }
-        .mic-glow {
-            box-shadow: 0 10px 25px -5px rgba(70, 185, 175, 0.15), 0 8px 10px -6px rgba(70, 185, 175, 0.1);
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-soft-off-white text-gray-900;
+                -webkit-font-smoothing: antialiased;
+            }
         }
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #2DD4BF 0%, #0D9488 100%);
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .chevron-icon {
+            transform: rotate(180deg);
         }
     </style>
-    <style>
+<style>
         body {
-            min-height: max(884px, 100dvh);
+            min-height: max(844px, 100dvh);
         }
     </style>
-</head>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center">
+<div class="w-full max-w-[390px] h-[844px] flex flex-col relative bg-soft-off-white shadow-2xl overflow-hidden">
+<header class="px-6 pt-6 flex justify-between items-center">
+<div class="flex items-center gap-1.5">
+<span class="text-xl font-extrabold tracking-tighter text-gray-900">ECHO</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100">
+<span class="material-symbols-outlined text-gray-600 text-[22px]">calendar_today</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-teal-100 border-2 border-white shadow-sm flex items-center justify-center overflow-hidden">
+<span class="text-teal-700 font-bold text-xs uppercase">JD</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col px-6 pt-8">
+<div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col h-fit">
+<div class="flex justify-between items-start mb-10">
+<span class="bg-gray-100/80 text-[10px] font-bold tracking-[0.15em] text-gray-400 px-3.5 py-1.5 rounded-full uppercase">
+                        AI EVOLUTION
+                    </span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 text-gray-400 hover:text-teal-600 transition-colors">
+<span class="material-symbols-outlined text-[24px]">volume_up</span>
+</button>
+</div>
+<div class="mb-10">
+<h1 class="font-serif italic text-[26px] leading-[1.45] text-gray-800 font-medium">
+                        I'd like to talk about a cozy bakery named <span class="text-teal-600 not-italic font-semibold">'Sun &amp; Flour'</span> in my neighborhood.
+                    </h1>
+</div>
+<details class="group">
+<summary class="list-none cursor-pointer outline-none">
+<div class="bg-gray-50/80 border border-gray-100/50 rounded-full px-5 py-3.5 flex items-center justify-between transition-all active:bg-gray-100">
+<span class="text-[11px] font-bold tracking-[0.12em] text-gray-500 uppercase font-display">
+                                核心表达 · KEY EXPRESSIONS
+                            </span>
+<span class="material-symbols-outlined transition-transform duration-300 chevron-icon text-gray-400 text-[20px]">
+                                expand_more
+                            </span>
+</div>
+</summary>
+<div class="mt-6 px-2 flex flex-col gap-5">
+<div class="flex flex-col gap-1.5">
+<span class="text-[15px] font-medium text-gray-700">Cozy</span>
+<span class="text-[13px] text-gray-400">舒适的 / 温馨的</span>
+</div>
+<div class="h-[1px] w-full bg-gray-50"></div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[15px] font-medium text-gray-700">Prioritize quality over quantity</span>
+<span class="text-[13px] text-gray-400">质重于量</span>
+</div>
+<div class="h-[1px] w-full bg-gray-50"></div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[15px] font-medium text-gray-700">Set someone apart</span>
+<span class="text-[13px] text-gray-400">使...脱颖而出</span>
+</div>
+</div>
+</details>
+</div>
+</main>
+<footer class="pb-12 px-6">
+<button class="btn-gradient w-full h-16 rounded-full flex items-center justify-center gap-3 shadow-[0_8px_25px_-5px_rgba(20,184,166,0.4)] active:scale-[0.98] transition-all duration-200">
+<span class="material-symbols-outlined text-white text-[24px]">send</span>
+<span class="text-white font-display font-semibold text-lg tracking-wide">现在，再次发声</span>
+</button>
+</footer>
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-gray-200 rounded-full"></div>
+</div>
 
-<body class="bg-background-light text-slate-900 font-sans h-screen overflow-hidden">
-    <div class="max-w-md mx-auto h-full flex flex-col relative px-6 pt-12 pb-12">
-        <header class="flex items-center justify-between mb-16">
-            <div class="flex items-center space-x-3">
-                <div
-                    class="w-10 h-10 bg-white flex items-center justify-center rounded-xl shadow-sm border border-slate-200/60">
-                    <span class="material-icons-round text-primary text-2xl">waves</span>
-                </div>
-                <h1 class="text-xl font-bold tracking-tight text-slate-800">ECHO</h1>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button class="flex items-center justify-center text-slate-500">
-                    <span class="material-symbols-outlined text-2xl">calendar_today</span>
-                </button>
-                <div
-                    class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white text-xs font-bold">
-                    JD
-                </div>
-            </div>
-        </header>
-        <main class="flex-grow flex flex-col items-center">
-            <div class="w-full flex flex-col items-center text-center">
-                <div class="px-4 py-1.5 bg-slate-200/50 rounded-full mb-8">
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-slate-500">Stage 1: Origin</span>
-                </div>
-                <div class="space-y-6 max-w-[320px]">
-                    <h2 class="font-serif italic text-[32px] leading-tight text-slate-900 px-2">
-                        Describe a small business you know that is very successful.
-                    </h2>
-                    <p class="italic text-slate-500 text-sm leading-relaxed px-4">
-                        Focus on: What it is, where it is, and the secret of its success.
-                    </p>
-                </div>
-            </div>
-            <div class="mt-auto mb-16 flex flex-col items-center space-y-8">
-                <button
-                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-white/50 group active:scale-95 transition-all duration-200 mic-glow">
-                    <span class="material-icons-round text-primary text-5xl">mic</span>
-                </button>
-                <p class="text-sm text-slate-400 font-medium">
-                    长按开始第一次（Origin）尝试
-                </p>
-            </div>
-        </main>
-        <footer class="h-8"></footer>
-    </div>
-
-</body>
-
-</html>
+</body></html>

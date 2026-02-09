@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import HitIcon from '@/assets/svg/hit.svg'
 
 // 用户信息
 const userInitials = 'JD'
+
+const router = useRouter()
 
 // 转写内容（从上一页传递或模拟）
 const transcribedText = ref(
@@ -25,6 +28,7 @@ function handleSubmit() {
   }
   // TODO: 调用 AI 重塑表达
   console.log('提交意图:', mentalIntent.value)
+  router.push({ name: 'evolution' })
 }
 </script>
 
