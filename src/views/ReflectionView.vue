@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import HitIcon from '@/assets/svg/hit.svg'
+import AppHeader from '@/components/AppHeader.vue'
 
 // 用户信息
 const userInitials = 'JD'
@@ -35,24 +36,7 @@ function handleSubmit() {
 <template>
   <div class="max-w-md mx-auto h-full flex flex-col relative px-6 pt-12 pb-8">
     <!-- Header -->
-    <header class="flex items-center justify-between mb-8">
-      <div class="flex items-center space-x-3">
-        <div
-          class="w-10 h-10 bg-white flex items-center justify-center rounded-xl shadow-sm border border-slate-200/60">
-          <span class="material-icons-round text-primary text-2xl">waves</span>
-        </div>
-        <h1 class="text-xl font-bold tracking-tight text-slate-800">ECHO</h1>
-      </div>
-      <div class="flex items-center space-x-4">
-        <button class="flex items-center justify-center text-slate-500">
-          <span class="material-symbols-outlined text-2xl">calendar_today</span>
-        </button>
-        <div
-          class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white text-xs font-bold shadow-md">
-          {{ userInitials }}
-        </div>
-      </div>
-    </header>
+    <AppHeader :user-initials="userInitials" class="mb-8" />
 
     <!-- Main Content -->
     <main class="grow flex flex-col space-y-8">
