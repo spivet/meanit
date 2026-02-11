@@ -1,48 +1,31 @@
 <script setup lang="ts">
-interface Props {
+withDefaults(
+  defineProps<{
+    /** 用户头像文字 */
     userInitials?: string
-    variant?: 'default' | 'light'
-}
-
-withDefaults(defineProps<Props>(), {
-    userInitials: 'JD',
-    variant: 'default',
-})
+  }>(),
+  { userInitials: 'JD' },
+)
 </script>
 
 <template>
-    <header class="flex items-center justify-between" :class="variant === 'light' ? 'px-6 pt-6' : 'mb-16'">
-        <!-- Logo -->
-        <div class="flex items-center" :class="variant === 'default' ? 'space-x-3' : 'gap-1.5'">
-            <div v-if="variant === 'default'"
-                class="w-10 h-10 bg-white flex items-center justify-center rounded-xl shadow-sm border border-slate-200/60">
-                <span class="material-icons-round text-primary text-2xl">waves</span>
-            </div>
-            <h1 class="font-extrabold tracking-tighter text-gray-900"
-                :class="variant === 'light' ? 'text-xl' : 'text-xl'">
-                ECHO
-            </h1>
-        </div>
+  <header class="flex items-center justify-between px-6 py-4">
+    <!-- Brand -->
+    <span class="text-xl font-extrabold tracking-tighter text-gray-900 select-none">
+      ECHO
+    </span>
 
-        <!-- Actions -->
-        <div class="flex items-center" :class="variant === 'default' ? 'space-x-4' : 'gap-3'">
-            <button class="flex items-center justify-center text-slate-500" :class="variant === 'light'
-                    ? 'w-10 h-10 rounded-full bg-white shadow-sm border border-gray-100'
-                    : ''
-                ">
-                <span class="material-symbols-outlined"
-                    :class="variant === 'light' ? 'text-gray-600 text-[22px]' : 'text-2xl'">
-                    calendar_today
-                </span>
-            </button>
-            <div class="rounded-full flex items-center justify-center overflow-hidden" :class="variant === 'light'
-                    ? 'w-10 h-10 bg-teal-100 border-2 border-white shadow-sm'
-                    : 'w-10 h-10 bg-slate-800 text-white text-xs font-bold'
-                ">
-                <span :class="variant === 'light' ? 'text-teal-700 font-bold text-xs' : ''">
-                    {{ userInitials }}
-                </span>
-            </div>
-        </div>
-    </header>
+    <!-- Actions -->
+    <div class="flex items-center gap-3">
+      <button
+        class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100/80 text-gray-500 active:scale-95 transition-transform"
+        aria-label="日历">
+        <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+      </button>
+
+      <div class="w-10 h-10 rounded-full bg-teal-50 border-2 border-white shadow-sm flex items-center justify-center">
+        <span class="text-teal-700 font-bold text-xs">{{ userInitials }}</span>
+      </div>
+    </div>
+  </header>
 </template>

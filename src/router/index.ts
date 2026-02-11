@@ -1,31 +1,46 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import ReflectionView from '@/views/ReflectionView.vue'
-import EvolutionView from '@/views/EvolutionView.vue'
-import EvolutionSummaryView from '@/views/EvolutionSummaryView.vue'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
+import GuestLayout from '@/layouts/GuestLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // ─── 已登录路由（带 Header） ───
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      component: DefaultLayout,
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: () => import('@/views/HomeView.vue'),
+        },
+        {
+          path: 'reflection',
+          name: 'reflection',
+          component: () => import('@/views/ReflectionView.vue'),
+        },
+        {
+          path: 'evolution',
+          name: 'evolution',
+          component: () => import('@/views/EvolutionView.vue'),
+        },
+        {
+          path: 'evolution-summary',
+          name: 'evolution-summary',
+          component: () => import('@/views/EvolutionSummaryView.vue'),
+        },
+      ],
     },
+
+    // ─── 未登录路由（无 Header） ───
     {
-      path: '/reflection',
-      name: 'reflection',
-      component: ReflectionView,
-    },
-    {
-      path: '/evolution',
-      name: 'evolution',
-      component: EvolutionView,
-    },
-    {
-      path: '/evolution-summary',
-      name: 'evolution-summary',
-      component: EvolutionSummaryView,
+      path: '/auth',
+      component: GuestLayout,
+      children: [
+        // 未来扩展：登录、注册等页面
+        // { path: 'login', name: 'login', component: () => import('@/views/LoginView.vue') },
+      ],
     },
   ],
 })
